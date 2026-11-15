@@ -18,7 +18,7 @@ days = collections.Counter(d.date() for d in dates)
 repos = api(f"https://api.github.com/users/{USER}/repos?per_page=100&type=owner")
 langs = collections.Counter()
 for r in repos:
-    if r.get("language") and not r.get("fork"): langs[r["language"]] += 1
+    if r.get("language"): langs[r["language"]] += 1
 n = len(dates)
 peak = max(hours, key=hours.get) if hours else 12
 if 5 <= peak < 12: kind = "Madrugadora"
