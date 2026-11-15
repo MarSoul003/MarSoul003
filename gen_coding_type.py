@@ -1,5 +1,7 @@
 """Genera coding-type.svg con la actividad pública de GitHub (solo stdlib)."""
 import json, math, os, sys, urllib.request, collections, datetime as dt
+# Edita esta lista con otros lenguajes/herramientas que usas fuera de repos publicos
+EXTRAS = ["PHP", "Liquid", "JavaScript", "TypeScript", "HTML", "CSS", "SQL"]
 USER = sys.argv[1] if len(sys.argv) > 1 else "MarSoul003"
 TOKEN = os.environ.get("GITHUB_TOKEN")
 def api(url):
@@ -43,11 +45,21 @@ for i, l in enumerate("LMMJVSD"):
     h = 6 + 56 * wd.get(i, 0) / wm
     bars += f'<rect x="{640+i*26}" y="{100-h:.0f}" width="16" height="{h:.0f}" rx="4" fill="{"#5BBF9A" if i<5 else "#B7A6F0"}"/><text x="{648+i*26}" y="116" text-anchor="middle" class="m" font-size="10" fill="#9CA3AF">{l}</text>'
 tl = sum(langs.values()) or 1
+auto = [k for k, _ in langs.most_common(3)]
+extras = [e for e in EXTRAS if e not in langs]
+bw = 160 - (14 if extras else 0)
 seg, lg, x = "", "", 640
-for i, (k, v) in enumerate(langs.most_common(4)):
-    w = 160 * v / tl
+for i, k in enumerate(auto):
+    v = langs[k]; w = bw * v / tl
     seg += f'<rect x="{x:.0f}" y="146" width="{w:.0f}" height="8" fill="{PAL[i]}"/>'; x += w
     lg += f'<circle cx="{644+(i%2)*90}" cy="{172+(i//2)*16}" r="4" fill="{PAL[i]}"/><text x="{652+(i%2)*90}" y="{176+(i//2)*16}" class="m" font-size="11" fill="#4B5563">{k} {v*100//tl}%</text>'
+if extras:
+    seg += f'<rect x="{x:.0f}" y="146" width="{640+160-x:.0f}" height="8" fill="#D9D4EE"/>'
+    row = 172 + ((len(auto) + 1) // 2) * 16
+    lg += f'<circle cx="644" cy="{row}" r="4" fill="#D9D4EE"/><text x="652" y="{row+4}" class="m" font-size="11" fill="#4B5563">Otros</text>'
+    txt = " · ".join(extras); a, b2 = txt[:26], txt[26:52]
+    lg += f'<text x="652" y="{row+20}" class="m" font-size="10" fill="#6B7280">{a}</text>'
+    if b2: lg += f'<text x="652" y="{row+33}" class="m" font-size="10" fill="#6B7280">{b2}</text>'
 svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="860" height="250" viewBox="0 0 860 250"><style>.t{{font-family:-apple-system,Inter,Segoe UI,Helvetica,Arial,sans-serif}}.m{{font-family:SF Mono,Menlo,Consolas,monospace}}</style>
 <rect x=".5" y=".5" width="859" height="249" rx="16" fill="#F7F5FD" stroke="#E5E0F5"/>
 <text x="36" y="50" class="m" font-size="12" letter-spacing="2" fill="#9CA3AF">TIPO DE CODIFICACIÓN</text>
