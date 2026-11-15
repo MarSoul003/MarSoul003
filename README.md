@@ -35,7 +35,7 @@ Ingeniera en Sistemas Computacionales, desarrolladora web y diseñadora UI/UX, e
 
 ## Tipo de codificación
 
-<p align="center"><img src="coding-type.svg" alt="Tipo de codificación" width="100%"/></p>
+<p align="center"><img src="coding-type.svg?v=2" alt="Tipo de codificación" width="100%"/></p>
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/MarSoul003/MarSoul003/output/github-snake.svg" alt="snake"/>
