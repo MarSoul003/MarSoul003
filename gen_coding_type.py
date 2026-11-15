@@ -57,9 +57,14 @@ if extras:
     seg += f'<rect x="{x:.0f}" y="146" width="{640+160-x:.0f}" height="8" fill="#D9D4EE"/>'
     row = 172 + ((len(auto) + 1) // 2) * 16
     lg += f'<circle cx="644" cy="{row}" r="4" fill="#D9D4EE"/><text x="652" y="{row+4}" class="m" font-size="11" fill="#4B5563">Otros</text>'
-    txt = " · ".join(extras); a, b2 = txt[:26], txt[26:52]
-    lg += f'<text x="652" y="{row+20}" class="m" font-size="10" fill="#6B7280">{a}</text>'
-    if b2: lg += f'<text x="652" y="{row+33}" class="m" font-size="10" fill="#6B7280">{b2}</text>'
+    lines, cur = [], ""
+    for e in extras:
+        t = (cur + " · " + e) if cur else e
+        if len(t) > 24: lines.append(cur); cur = e
+        else: cur = t
+    lines.append(cur)
+    for j, ln in enumerate(lines[:3]):
+        lg += f'<text x="652" y="{row+20+j*13}" class="m" font-size="10" fill="#6B7280">{ln}</text>'
 svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="860" height="250" viewBox="0 0 860 250"><style>.t{{font-family:-apple-system,Inter,Segoe UI,Helvetica,Arial,sans-serif}}.m{{font-family:SF Mono,Menlo,Consolas,monospace}}</style>
 <rect x=".5" y=".5" width="859" height="249" rx="16" fill="#F7F5FD" stroke="#E5E0F5"/>
 <text x="36" y="50" class="m" font-size="12" letter-spacing="2" fill="#9CA3AF">TIPO DE CODIFICACIÓN</text>
