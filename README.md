@@ -3,9 +3,9 @@
 </p>
 
 <p align="center">
-  <a href="mailto:vazquezmariana0003@gmail.com"><img src="https://img.shields.io/badge/Correo-E58FB0?style=flat-square&logo=gmail&logoColor=white" alt="Correo"/></a>
-  <a href="https://www.linkedin.com/in/mariana-vazquez-404468267/"><img src="https://img.shields.io/badge/LinkedIn-8B7FD6?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Portafolio-pr%C3%B3ximamente-5BBF9A?style=flat-square" alt="Portafolio"/></a>
+  <a href="mailto:vazquezmariana0003@gmail.com"><img src="c-correo.svg" alt="Correo" height="42"/></a>&nbsp;
+  <a href="https://www.linkedin.com/in/mariana-vazquez-404468267/"><img src="c-linkedin.svg" alt="LinkedIn" height="42"/></a>&nbsp;
+  <img src="c-portafolio.svg" alt="Portafolio próximamente" height="42"/>
 </p>
 
 ## Sobre mí
