@@ -24,18 +24,18 @@ Ingeniera en Sistemas Computacionales, desarrolladora web y diseñadora UI/UX, e
   <img src="https://img.shields.io/badge/Figma-E58FB0?style=for-the-badge&logo=figma&logoColor=white"/>
 </p>
 
-## Qué hago
-
-<img src="services.svg" alt="Qué hago" width="100%"/>
-
-## Lenguajes y actividad
+## Proyectos
 
 <table>
   <tr>
-    <td width="50%"><img src="languages.svg" alt="Lenguajes"/></td>
-    <td width="50%"><img src="https://github-readme-streak-stats.herokuapp.com/?user=MarSoul003&locale=es&background=E8F5EF&ring=5BBF9A&fire=E58FB0&currStreakLabel=1F2937&sideLabels=4B5563&currStreakNum=1F2937&sideNums=1F2937&dates=6B7280&border=D5E8DF&stroke=D5E8DF&hide_border=false&border_radius=14"/></td>
+    <td width="50%"><a href="https://github.com/MarSoul003?tab=repositories"><img src="p-pomodoro.svg" alt="Pomodoro"/></a></td>
+    <td width="50%"><a href="https://github.com/MarSoul003?tab=repositories"><img src="p-agenda.svg" alt="Agenda"/></a></td>
   </tr>
 </table>
+
+## Tipo de codificación
+
+<p align="center"><img src="coding-type.svg" alt="Tipo de codificación" width="100%"/></p>
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/MarSoul003/MarSoul003/output/github-snake.svg" alt="snake"/>
