@@ -55,8 +55,8 @@ Ingeniera en Sistemas Computacionales, desarrolladora web y diseñadora UI/UX, e
 
 <table>
   <tr>
-    <td width="50%"><img src="https://github-readme-stats.vercel.app/api/top-langs/?username=MarSoul003&layout=compact&hide_border=false&bg_color=F7F5FD&title_color=1F2937&text_color=4B5563&border_color=E5E0F5&border_radius=14&langs_count=8"/></td>
-    <td width="50%"><img src="https://github-readme-streak-stats.herokuapp.com/?user=MarSoul003&background=E8F5EF&ring=5BBF9A&fire=E58FB0&currStreakLabel=1F2937&sideLabels=4B5563&currStreakNum=1F2937&sideNums=1F2937&dates=6B7280&border=D5E8DF&stroke=D5E8DF&hide_border=false&border_radius=14"/></td>
+    <td width="50%"><img src="languages.svg" alt="Lenguajes"/></td>
+    <td width="50%"><img src="https://github-readme-streak-stats.herokuapp.com/?user=MarSoul003&locale=es&background=E8F5EF&ring=5BBF9A&fire=E58FB0&currStreakLabel=1F2937&sideLabels=4B5563&currStreakNum=1F2937&sideNums=1F2937&dates=6B7280&border=D5E8DF&stroke=D5E8DF&hide_border=false&border_radius=14"/></td>
   </tr>
 </table>
 
