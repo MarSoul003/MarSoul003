@@ -10,7 +10,7 @@
   <style>
     .t{font-family:-apple-system,'Inter','Segoe UI',Helvetica,Arial,sans-serif}
     .m{font-family:'SF Mono',Menlo,Consolas,monospace}
-  </style>
+  .p0{animation:cy 12s infinite;animation-delay:0s;opacity:0}.p1{animation:cy 12s infinite;animation-delay:3s;opacity:0}.p2{animation:cy 12s infinite;animation-delay:6s;opacity:0}.p3{animation:cy 12s infinite;animation-delay:9s;opacity:0}@keyframes cy{0%{opacity:0;transform:translateY(6px)}4%,22%{opacity:1;transform:translateY(0)}26%,100%{opacity:0;transform:translateY(-6px)}}</style>
   <rect width="900" height="300" rx="22" fill="url(#bg)"/>
   <rect width="900" height="300" rx="22" fill="url(#grid)"/>
   <rect x="0.5" y="0.5" width="899" height="299" rx="21.5" fill="none" stroke="#1F2937" stroke-opacity="0.1"/>
@@ -20,7 +20,7 @@
   <text x="78" y="61" class="m" font-size="12.5" fill="#4B5563">abierta a proyectos · MX</text>
 
   <text x="44" y="150" class="t" font-size="62" font-weight="800" fill="#1F2937" letter-spacing="-2">Hola, soy Mariana.</text>
-  <text x="44" y="206" class="m" font-size="20" fill="#374151"><tspan fill="#8B7FD6">~ ❯</tspan> web, e-commerce, apps móviles &amp; UI/UX</text>
+  <text x="44" y="206" class="m" font-size="20" fill="#8B7FD6">~ ❯</text><text class="m" font-size="20" fill="#374151"><tspan class="p0" x="104" y="206">web, e-commerce &amp; UI/UX</tspan><tspan class="p1" x="104" y="206">tiendas en Shopify &amp; Tiendanube</tspan><tspan class="p2" x="104" y="206">apps móviles en Kotlin</tspan><tspan class="p3" x="104" y="206">sitios en WordPress</tspan></text>
   <text x="44" y="262" class="m" font-size="13" fill="#6B7280">Shopify · WordPress · Tiendanube · Kotlin</text>
 
   <g transform="translate(600,60)">
