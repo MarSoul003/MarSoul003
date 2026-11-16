@@ -14,7 +14,7 @@ Ingeniera en Sistemas Computacionales, desarrolladora web y diseñadora UI/UX, e
 
 ## Stack
 
-<img src="stack.svg?v=4" alt="Stack" width="520"/>
+<img src="stack.svg?v=5" alt="Stack" width="520"/>
 
 ## Proyectos
 
