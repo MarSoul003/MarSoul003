@@ -84,3 +84,55 @@ svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="640" height="{H}" viewB
 </svg>'''
 open("coding-type.svg", "w").write(svg)
 print("ok", n, "commits", dict(langs))
+
+# ---------- versión ancha (escritorio) ----------
+WX, WY = 460, 125
+wrad = ""
+for h in range(24):
+    a = (h / 24) * 2 * math.pi - math.pi / 2
+    L = 12 + 46 * (hours.get(h, 0) / mx)
+    x1, y1 = WX + 34 * math.cos(a), WY + 34 * math.sin(a)
+    x2, y2 = WX + (34 + L) * math.cos(a), WY + (34 + L) * math.sin(a)
+    op = 0.25 + 0.75 * hours.get(h, 0) / mx
+    wrad += f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{x2:.1f}" y2="{y2:.1f}" stroke="#8B7FD6" stroke-opacity="{op:.2f}" stroke-width="6" stroke-linecap="round"/>'
+for h, l in ((0, "00"), (6, "06"), (12, "12"), (18, "18")):
+    a = (h / 24) * 2 * math.pi - math.pi / 2
+    wrad += f'<text x="{WX+112*math.cos(a):.0f}" y="{WY+112*math.sin(a)+4:.0f}" text-anchor="middle" class="m sub" font-size="11">{l}</text>'
+wbars = ""
+for i, l in enumerate("LMMJVSD"):
+    h = 6 + 56 * wd.get(i, 0) / wm
+    wbars += f'<rect x="{640+i*26}" y="{100-h:.0f}" width="16" height="{h:.0f}" rx="4" fill="{"#5BBF9A" if i<5 else "#B7A6F0"}"/><text x="{648+i*26}" y="116" text-anchor="middle" class="m sub" font-size="10">{l}</text>'
+wseg, wlg, x = "", "", 640
+bw2 = 160 - (14 if extras else 0)
+for i, k in enumerate(auto):
+    v = langs[k]; w = bw2 * v / tl
+    wseg += f'<rect x="{x:.0f}" y="146" width="{w:.0f}" height="8" fill="{PAL[i]}"/>'; x += w
+    wlg += f'<circle cx="{644+(i%2)*90}" cy="{172+(i//2)*16}" r="4" fill="{PAL[i]}"/><text x="{652+(i%2)*90}" y="{176+(i//2)*16}" class="m mut" font-size="11">{k} {v*100//tl}%</text>'
+if extras:
+    wseg += f'<rect x="{x:.0f}" y="146" width="{800-x:.0f}" height="8" fill="#D9D4EE"/>'
+    r2 = 172 + ((len(auto) + 1) // 2) * 16
+    wlg += f'<circle cx="644" cy="{r2}" r="4" fill="#D9D4EE"/><text x="652" y="{r2+4}" class="m mut" font-size="11">Otros</text>'
+    wl, cur = [], ""
+    for e in extras:
+        t = (cur + " · " + e) if cur else e
+        if len(t) > 24: wl.append(cur); cur = e
+        else: cur = t
+    wl.append(cur)
+    for j, ln in enumerate(wl[:3]):
+        wlg += f'<text x="652" y="{r2+18+j*13}" class="m sub" font-size="10">{ln}</text>'
+wide = f'''<svg xmlns="http://www.w3.org/2000/svg" width="860" height="250" viewBox="0 0 860 250"><style>.t{{font-family:-apple-system,Inter,Segoe UI,Helvetica,Arial,sans-serif}}.m{{font-family:SF Mono,Menlo,Consolas,monospace}}
+.ink{{fill:#1F2937}}.mut{{fill:#4B5563}}.sub{{fill:#6B7280}}.panel{{fill:#F7F5FD;stroke:#E5E0F5}}.chip{{fill:#fff;stroke:#E5E0F5}}.ring{{stroke:#E5E0F5}}
+@media (prefers-color-scheme:dark){{.ink{{fill:#F3F1FA}}.mut{{fill:#C9C5DA}}.sub{{fill:#A29FB3}}.panel{{fill:#211E2C;stroke:#322E42}}.chip{{fill:#2A2638;stroke:#3F3A66}}.ring{{stroke:#322E42}}}}</style>
+<rect x=".5" y=".5" width="859" height="249" rx="16" class="panel"/>
+<text x="36" y="50" class="m sub" font-size="12" letter-spacing="2">TIPO DE CODIFICACIÓN</text>
+<text x="36" y="96" class="t ink" font-size="34" font-weight="800">{kind}</text>
+<text x="36" y="128" class="t mut" font-size="14">Pico de commits a las {peak}:00</text>
+<text x="36" y="150" class="t mut" font-size="14">{busy}% de commits en el 10% de días más activos</text>
+<rect x="36" y="172" width="100" height="28" rx="14" class="chip"/><text x="52" y="190" class="m mut" font-size="12">{len(repos)} repos</text>
+<rect x="146" y="172" width="130" height="28" rx="14" class="chip"/><text x="162" y="190" class="m mut" font-size="12">{len(langs)} lenguajes</text>
+<text x="36" y="228" class="m sub" font-size="11">{n} commits públicos · actualizado {dt.date.today()}</text>
+<circle cx="{WX}" cy="{WY}" r="100" fill="none" class="ring"/><text x="{WX}" y="{WY-3}" text-anchor="middle" class="t ink" font-size="20" font-weight="700">{peak}h</text><text x="{WX}" y="{WY+13}" text-anchor="middle" class="m sub" font-size="10">pico</text>{wrad}
+<text x="640" y="50" class="t mut" font-size="12">Semana</text>{wbars}
+<text x="640" y="140" class="t mut" font-size="12">Lenguajes</text>{wseg}{wlg}
+</svg>'''
+open("coding-type-wide.svg", "w").write(wide)
