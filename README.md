@@ -1,5 +1,8 @@
 <p align="center">
-  <img src="banner.svg?v=7" alt="Hola, soy Mariana" width="520"/>
+  <picture>
+    <source media="(max-width: 700px)" srcset="banner.svg?v=9">
+    <img src="banner-wide.svg?v=9" alt="Hola, soy Mariana" width="100%"/>
+  </picture>
 </p>
 
 <p align="center">
