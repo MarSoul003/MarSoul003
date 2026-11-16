@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="banner.svg?v=3" alt="Hola, soy Mariana" width="100%"/>
+  <img src="banner.svg?v=4" alt="Hola, soy Mariana" width="640"/>
 </p>
 
 <p align="center">
@@ -14,16 +14,18 @@ Ingeniera en Sistemas Computacionales, desarrolladora web y diseñadora UI/UX, e
 
 ## Stack
 
-<img src="stack.svg?v=3" alt="Stack" width="100%"/>
+<img src="stack.svg?v=4" alt="Stack" width="520"/>
 
 ## Proyectos
 
-<a href="https://github.com/MarSoul003?tab=repositories"><img src="p-pomodoro.svg?v=3" alt="Pomodoro" width="100%"/></a>
-<a href="https://github.com/MarSoul003?tab=repositories"><img src="p-agenda.svg?v=3" alt="Agenda" width="100%"/></a>
+<p>
+  <a href="https://github.com/MarSoul003?tab=repositories"><img src="p-pomodoro.svg?v=4" alt="Pomodoro" width="360"/></a>
+  <a href="https://github.com/MarSoul003?tab=repositories"><img src="p-agenda.svg?v=4" alt="Agenda" width="360"/></a>
+</p>
 
 ## Tipo de codificación
 
-<p align="center"><img src="coding-type.svg?v=3" alt="Tipo de codificación" width="100%"/></p>
+<p align="center"><img src="coding-type.svg?v=4" alt="Tipo de codificación" width="640"/></p>
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/MarSoul003/MarSoul003/output/github-snake.svg" alt="snake"/>
